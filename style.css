@@ -1,0 +1,123 @@
+/* Ensure html and body take up full height and have no margins */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    margin: 0;
+    
+    background-color: #44ab38;
+    background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #dc3545;
+    margin-bottom: 30px;
+    font-size: 3em;
+}
+
+.card-container {
+    width: 80vw;
+    height: 70vh;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    perspective: 40vw;
+}
+
+#gift-image {
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#next-button {
+    padding: 12px 24px;
+    background: linear-gradient(to bottom, #32CD32, #228B22);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2em;
+    transition: background-color 0.3s ease;
+}
+
+#next-button:hover {
+    background-color: #1E6A1E;
+}
+
+/* Animation styles */
+.card-container.animate #gift-image {
+    animation: flipCard 1s forwards;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.card-container.animate .card {
+    transform: rotateY(180deg);
+}
+
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    background: white; /* Front of the card 
+    background-image: url('christmas.png');
+    background-size: cover;*/
+}
+
+.card .back {
+    background: linear-gradient(45deg, #f06 25%, transparent 25%, transparent 50%, #f06 50%, #f06 75%, transparent 75%, transparent);
+    background-size: 20px 20px;
+    transform: rotateY(180deg);
+}
+
+@keyframes flipCard {
+    0% {
+        transform: perspective(600px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(600px) rotateY(180deg);
+    }
+}
+
+@keyframes spinAndFade {
+    0% { transform: rotate(0deg) scale(1); opacity: 1; }
+    50% { transform: rotate(180deg) scale(0.5); opacity: 0.2; }
+    100% { transform: rotate(360deg) scale(1); opacity: 1; }
+}
