@@ -1,0 +1,17 @@
+# macOS system files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Temporary files
+*.log
+*.tmp
+
+# Audio processing intermediate files
+hohoho/*.mp3
+hohoho/*.wav
+
+# Ignore specific system or development files
+.env
