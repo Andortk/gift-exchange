@@ -23,3 +23,6 @@ Then open `http://localhost:8000` in your web browser.
 
 ## Contributing
 Feel free to fork and contribute to this festive project!
+
+https://github.com/Andortk/gift-exchange
+https://Andortk.github.io/gift-exchange/
